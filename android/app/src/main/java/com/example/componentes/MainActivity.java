@@ -1,4 +1,4 @@
-// package com.example.componentes;
+package com.example.componentes;
 
 import io.flutter.embedding.android.FlutterActivity;
 

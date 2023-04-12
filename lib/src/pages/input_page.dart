@@ -10,7 +10,7 @@ class _InputPageState extends State<InputPage> {
   String _email = '';
   String _fecha = '';
 
-  String? _opcionSeleccionada = 'Volar';
+  String _opcionSeleccionada = 'Volar';
 
   List<String> _poderes = ['Volar', 'Rayos X', 'Super Aliento', 'Super Fuerza'];
 
@@ -148,7 +148,7 @@ class _InputPageState extends State<InputPage> {
             items: getOpcionesDropdown(),
             onChanged: (dynamic opt) {
               setState(() {
-                _opcionSeleccionada = opt;
+                _opcionSeleccionada = opt.toString();
               });
             },
           ),
@@ -161,7 +161,7 @@ class _InputPageState extends State<InputPage> {
     return ListTile(
       title: Text('Nombre es: $_nombre'),
       subtitle: Text('Email: $_email'),
-      trailing: Text(_opcionSeleccionada!),
+      trailing: Text(_opcionSeleccionada),
     );
   }
 }

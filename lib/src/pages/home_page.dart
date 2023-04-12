@@ -4,6 +4,8 @@ import 'package:componentes/src/providers/menu_provider.dart';
 
 import 'package:componentes/src/utils/icono_string_util.dart';
 
+// import 'package:componentes/src/pages/alert_page.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class HomePage extends StatelessWidget {
 
   Widget _lista() {
     // menuProvider.cargarData()
-    return FutureBuilder<dynamic>(
+    return FutureBuilder(
       future: menuProvider.cargarData(),
       initialData: [],
       builder: (context, snapshot) {
@@ -28,10 +30,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  List<Widget> _listaItems(
-      List<dynamic> /*?*/ /*!*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/ /*?*/
-          data,
-      BuildContext context) {
+  List<Widget> _listaItems(data, BuildContext context) {
     final List<Widget> opciones = [];
 
     data.forEach((opt) {
