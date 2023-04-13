@@ -4,16 +4,19 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:componentes/src/routes/routes.dart';
 import 'package:componentes/src/pages/alert_page.dart';
 
-
- 
 void main() => runApp(MyApp());
- 
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Componentes APP',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        // colorSchemeSeed: Colors.red,
+        colorScheme: ColorScheme.light(),
+      ),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -25,19 +28,12 @@ class MyApp extends StatelessWidget {
       //  home: HomePage(),
       initialRoute: '/',
       routes: getApplicationRoutes(),
-      onGenerateRoute: ( RouteSettings settings ){
-
-        print( 'Ruta llamda: ${ settings.name }' );
+      onGenerateRoute: (RouteSettings settings) {
+        print('Ruta llamda: ${settings.name}');
 
         return MaterialPageRoute(
-          builder: ( BuildContext context ) => AlertPage()
-        );
-
-
+            builder: (BuildContext context) => AlertPage());
       },
-      
     );
   }
 }
-
-
